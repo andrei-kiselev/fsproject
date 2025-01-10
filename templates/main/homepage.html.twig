@@ -1,3 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} My homepage Woo {% endblock %}
+
+{% block body %}
 <h1>myhomepage1</h1>
 <div>
     Browse through {{ numberStarships * 10 }} starts
@@ -8,3 +13,5 @@
     <p>over 30 </p>
 </div>
 {% endif %}
+
+{% endblock %}
