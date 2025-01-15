@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\Starship;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
@@ -10,8 +11,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class StarshipController extends AbstractController
 {
     #[Route('/api/starships', name: 'starship')]
-    public function getCollection(): JsonResponse
+    public function getCollection(LoggerInterface $logger): JsonResponse
     {
+        $logger->info('StarshipController.getCollection');
+
         $starships = [
             new Starship(
                 1,
