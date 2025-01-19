@@ -15,7 +15,11 @@
 {% endif %}
     {# debug this page #}
 <h2>My ship</h2>
-    <div><b>Name</b><span>{{ starship.name }}</span></div>
+    <div>
+        <a href="{{ path('app.starship.single', {id : starship.id}) }}">
+            <b>Name</b><span>{{ starship.name }}</span>
+        </a>
+    </div>
     <div><b>Class</b><span>{{ starship.class }}</span></div>
     <div><b>Capitan</b><span>{{ starship.capitan }}</span></div>
     <div><b>Status</b><span>{{ starship.status }}</span></div>
